@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор принципа Бэббиджа</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <main class="main-card">
+        <h1>Принцип Бэббиджа: экономия на разделении труда</h1>
+        
+        <div class="control-group">
+            <div class="control-label">
+                <span>Выбрано операций: <b id="n">4</b></span>
+                <span>Демонстрация</span>
+            </div>
+            <input id="r" type="range" min="2" max="10" value="4">
+        </div>
+
+        <div class="visualization">
+            <div class="bar-wrapper">
+                <div class="bar-label">Без разделения труда (один мастер делает всё по высшей ставке)</div>
+                <div class="track">
+                    <div class="bar" id="b1" style="width: 100%">0 ед.</div>
+                </div>
+            </div>
+
+            <div class="bar-wrapper">
+                <div class="bar-label">С разделением труда (каждая операция по своей тарифной ставке)</div>
+                <div class="track">
+                    <div class="bar" id="b2" style="width: 0%">0 ед.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-block">
+            <div class="big-percent" id="sv">0%</div>
+            <p class="result-text">
+                чистой экономии на оплате труда. Чем сложнее процесс и чем глубже специализация, тем выгоднее не нанимать универсального мастера на простую работу.
+            </p>
+        </div>
+    </main>
+
+    <aside class="side-card">
+        <h3>Тарифная сетка</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Операция</th>
+                        <th>Ставка/ч</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+    </aside>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
